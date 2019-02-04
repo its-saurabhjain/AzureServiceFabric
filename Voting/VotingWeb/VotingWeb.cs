@@ -60,8 +60,9 @@ namespace VotingWeb
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
             return new ServiceInstanceListener[]
+           
             {
-        new ServiceInstanceListener(
+         /*new ServiceInstanceListener(
             serviceContext =>
                 new KestrelCommunicationListener(
                     serviceContext,
@@ -83,7 +84,7 @@ namespace VotingWeb
                             .UseUrls(url)
                             .Build();
                     }))
-                    /*,
+                    ,*/
         new ServiceInstanceListener(
 serviceContext =>
     new KestrelCommunicationListener(
@@ -118,14 +119,14 @@ serviceContext =>
                 .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                 .UseUrls(url)
                 .Build();
-        }))*/
+        }))
             };
         }
         internal static Uri GetVotingDataServiceName(ServiceContext context)
         {
             return new Uri($"{context.CodePackageActivationContext.ApplicationName}/VotingData");
         }
-        /*
+        
         private X509Certificate2 GetCertificateFromStore()
         {
             var store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
@@ -133,13 +134,13 @@ serviceContext =>
             {
                 store.Open(OpenFlags.ReadOnly);
                 var certCollection = store.Certificates;
-                var currentCerts = certCollection.Find(X509FindType.FindBySubjectDistinguishedName, "CN=<your_CN_value>", false);
+                var currentCerts = certCollection.Find(X509FindType.FindBySubjectDistinguishedName, "CN=mytestcert", false);
                 return currentCerts.Count == 0 ? null : currentCerts[0];
             }
             finally
             {
                 store.Close();
             }
-        }*/
+        }
     }
 }

@@ -7,3 +7,7 @@ https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started
 3. Create dotnet application and deploy
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-tutorial-create-dotnet-app
 4. Stateless Web app invoking Stateful Service, and deployed on azure.
+
+5. Powershell command to get clinet certificate from .pfx in azure devops
+ [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Cloud\Azure\AzureDevOps\serv
+ice-fabric-dotnet-quickstart\mytestcert.pfx"))
