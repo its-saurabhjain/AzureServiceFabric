@@ -62,7 +62,7 @@ namespace VotingWeb
             return new ServiceInstanceListener[]
            
             {
-         /*new ServiceInstanceListener(
+         new ServiceInstanceListener(
             serviceContext =>
                 new KestrelCommunicationListener(
                     serviceContext,
@@ -84,7 +84,7 @@ namespace VotingWeb
                             .UseUrls(url)
                             .Build();
                     }))
-                    ,*/
+                    /*,
         new ServiceInstanceListener(
 serviceContext =>
     new KestrelCommunicationListener(
@@ -119,7 +119,7 @@ serviceContext =>
                 .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                 .UseUrls(url)
                 .Build();
-        }))
+        }))*/
             };
         }
         internal static Uri GetVotingDataServiceName(ServiceContext context)
